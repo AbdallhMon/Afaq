@@ -1,0 +1,50 @@
+Sine: A smooth, sinusoidal ease.
+
+ease: "sine.in"
+ease: "sine.out"
+ease: "sine.inOut"
+Quad: A quadratic ease, which is slightly more pronounced than linear.
+
+ease: "quad.in"
+ease: "quad.out"
+ease: "quad.inOut"
+Cubic: A cubic ease, which is even more pronounced.
+
+ease: "cubic.in"
+ease: "cubic.out"
+ease: "cubic.inOut"
+Quart: A quartic ease, which creates a stronger easing effect.
+
+ease: "quart.in"
+ease: "quart.out"
+ease: "quart.inOut"
+Quint: A quintic ease, which is very pronounced.
+
+ease: "quint.in"
+ease: "quint.out"
+ease: "quint.inOut"
+Expo: An exponential ease, which starts slow and speeds up quickly.
+
+ease: "expo.in"
+ease: "expo.out"
+ease: "expo.inOut"
+Circ: A circular ease, which creates a more natural motion.
+
+ease: "circ.in"
+ease: "circ.out"
+ease: "circ.inOut"
+Back: An ease that overshoots slightly before settling.
+
+ease: "back.in"
+ease: "back.out"
+ease: "back.inOut"
+Elastic: An elastic ease that bounces at the end.
+
+ease: "elastic.in"
+ease: "elastic.out"
+ease: "elastic.inOut"
+Bounce: A bouncing ease that mimics a bouncing motion.
+
+ease: "bounce.in"
+ease: "bounce.out"
+ease: "bounce.inOut"
