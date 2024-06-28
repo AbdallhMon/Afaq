@@ -571,17 +571,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   displayTable(tableData, tableBody, rowsPerPage, currentPage);
   updatePagination();
   // Swiper initialization
-  const swiper = new Swiper(".swiper-container", {
+  new Swiper(".swiper-container", {
     slidesPerView: 5,
     spaceBetween: 30,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 1500,
       disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
     },
   });
 
@@ -590,7 +586,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   for (let i = 1; i <= 11; i++) {
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide");
-    slide.innerHTML = `<img src="../imgs/partners/Asset ${i}.png" alt="Partner ${i}">`;
+    slide.innerHTML = `<img src="./imgs/partners/Asset ${i}.png" alt="Partner ${i}">`;
     partnersContainer.appendChild(slide);
   }
 });

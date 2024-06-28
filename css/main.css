@@ -374,7 +374,9 @@ body {
 .about-container {
   padding: 15px;
   background-color: var(--background-color);
-  border-radius: 15px;
+  @media (min-width: 768px) {
+    border-radius: 15px;
+  }
 }
 .about-wrapper {
   padding: 15px;
