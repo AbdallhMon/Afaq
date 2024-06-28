@@ -16,6 +16,12 @@
     />
     <title>مقام العقارية</title>
     <link rel="icon" href="./imgs/logo.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
   <body>
     <div id="loader-wrapper">
@@ -70,59 +76,441 @@
       </section>
 
       <section class="about" id="about-us">
-        <div class="about-wrapper">
-          <div class="about-image-wrapper">
-            <img
-              src="./imgs/hero/hero2.png"
-              alt="Property Image"
-              class="about-image"
-            />
-          </div>
-          <div class="about-text-wrapper">
-            <h2>عن الشركة</h2>
-            <p>
-              تهتم شركة مقام العقارية بإنشاء مشاريع شقق التمليك بتصاميم عصرية
-              وذكية وبمواصفات ذات جودة عالية وبخبراتنا في التطوير العقاري جعلتنا
-              نتميز بتلبية إحتياجاتكم وكسب ثقتكم.
-            </p>
-            <p>
-              بخبرات تجاوزت 44 عاماً تم تصميم مشاريع مقام لدى أكبر وأشهر مكاتب
-              التصميم الهندسية ونراعي في كل تصميم أدق التفاصيل ليرتقي لطموحاتكم.
-            </p>
+        <div class="about-container">
+          <div class="container">
+            <div class="about-wrapper">
+              <div class="about-image-wrapper">
+                <img
+                  src="./imgs/hero/hero2.png"
+                  alt="Property Image"
+                  class="about-image"
+                />
+              </div>
+              <div class="about-text-wrapper">
+                <h2>عن الشركة</h2>
+                <p>
+                  تهتم شركة مقام العقارية بإنشاء مشاريع شقق التمليك بتصاميم
+                  عصرية وذكية وبمواصفات ذات جودة عالية وبخبراتنا في التطوير
+                  العقاري جعلتنا نتميز بتلبية إحتياجاتكم وكسب ثقتكم.
+                </p>
+                <p>
+                  بخبرات تجاوزت 44 عاماً تم تصميم مشاريع مقام لدى أكبر وأشهر
+                  مكاتب التصميم الهندسية ونراعي في كل تصميم أدق التفاصيل ليرتقي
+                  لطموحاتكم.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section class="project" id="project-16">
         <h2>نبذه عن مشروع مقام</h2>
-        <div class="project-wrapper">
-          <div class="project-item">
-            <div class="project-image-wrapper">
-              <img
-                src="./imgs/gallery/gallery7.png"
-                alt="Gallery Image 1"
-                class="project-image"
-              />
-            </div>
-            <div class="project-text-wrapper">
-              <p>
-                مشروع مقام 16 في حي النرجس, يتكون من 15 شقة سكنية تتميز الشقق
-                بمواصفات ومساحات مختلفة تلبي احتياجات عملائنا على مختلف الأذواق،
-              </p>
-              <p>
-                حيث يقع في موقع مميز وإستراتيجي قريب من كافة المنافع، كما تتوفر
-                مواقف خاصة لكل شقة. <br />
-                اجمالي مساحة المشروع 1,910.00 م²
-                <br />
-                اجمالي مسطحات البناء 3,000.00 م²
-              </p>
+        <div class="container">
+          <div class="project-wrapper">
+            <div class="project-item">
+              <div class="project-image-wrapper">
+                <div>
+                  <img
+                    src="./imgs/gallery/gallery7.png"
+                    alt="Gallery Image 1"
+                    class="project-image"
+                  />
+                </div>
+              </div>
+              <div class="project-text-wrapper">
+                <p>
+                  مشروع مقام 16 في حي النرجس, يتكون من 15 شقة سكنية تتميز الشقق
+                  بمواصفات ومساحات مختلفة تلبي احتياجات عملائنا على مختلف
+                  الأذواق،
+                </p>
+                <p>
+                  حيث يقع في موقع مميز وإستراتيجي قريب من كافة المنافع، كما
+                  تتوفر مواقف خاصة لكل شقة. <br />
+                  اجمالي مساحة المشروع 1,910.00 م²
+                  <br />
+                  اجمالي مسطحات البناء 3,000.00 م²
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="project-features">
+        <h2>مميزات المشروع</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 1.png"
+              alt="Feature 1"
+              class="feature-icon"
+            />
+            <p>مداخل مكيفة</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 2.png"
+              alt="Feature 2"
+              class="feature-icon"
+            />
+            <p>مجلس مفتوع على الصالة</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 3.png"
+              alt="Feature 3"
+              class="feature-icon"
+            />
+            <p>موقف خاص</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 4.png"
+              alt="Feature 4"
+              class="feature-icon"
+            />
+            <p>إفرنجي معلق</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 5.png"
+              alt="Feature 5"
+              class="feature-icon"
+            />
+            <p>دخول ذكي</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 6.png"
+              alt="Feature 6"
+              class="feature-icon"
+            />
+            <p>تكييف سبيلت</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 7.png"
+              alt="Feature 7"
+              class="feature-icon"
+            />
+            <p>مدخل خاص</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 8.png"
+              alt="Feature 8"
+              class="feature-icon"
+            />
+            <p>أنظمة سلامة</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 9.png"
+              alt="Feature 9"
+              class="feature-icon"
+            />
+            <p>مصعد</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 10.png"
+              alt="Feature 10"
+              class="feature-icon"
+            />
+            <p>دش مطري</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 11.png"
+              alt="Feature 11"
+              class="feature-icon"
+            />
+            <p>مراقبة أمنية</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 12.png"
+              alt="Feature 12"
+              class="feature-icon"
+            />
+            <p>نباتات وتشجير</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 13.png"
+              alt="Feature 13"
+              class="feature-icon"
+            />
+            <p>فناء خارجي</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 14.png"
+              alt="Feature 14"
+              class="feature-icon"
+            />
+            <p>سطح خاص إطلالة بانورامية</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 15.png"
+              alt="Feature 15"
+              class="feature-icon"
+            />
+            <p>أبواب ضد الرطوبة</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 16.png"
+              alt="Feature 16"
+              class="feature-icon"
+            />
+            <p>مطبخ تصميم أمريكي</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 17.png"
+              alt="Feature 17"
+              class="feature-icon"
+            />
+            <p>إطلالة بانورامية</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 18.png"
+              alt="Feature 18"
+              class="feature-icon"
+            />
+            <p>غرفة خادمة</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="./imgs/features-3/feature 19.png"
+              alt="Feature 19"
+              class="feature-icon"
+            />
+            <p>غرفة غسيل ومستودع</p>
+          </div>
+        </div>
+      </section>
+      <section class="trusted">
+        <div class="trusted-container">
+          <div class="container">
+            <div class="trusted-flex">
+              <h2>ضمانات المشروع</h2>
+              <div class="trusted-grid">
+                <div class="trusted-item">
+                  <div>
+                    <h3>10 <span> سنوات</span></h3>
+                    <p>الهيكل الإنشائي</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>15 <span> سنوات</span></h3>
+
+                    <p>العزل المائي والحراري</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>10 <span> سنوات</span></h3>
+
+                    <p>خزانات المياه</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>2 <span> سنوات</span></h3>
+
+                    <p>المصاعد</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>10 <span> سنوات</span></h3>
+
+                    <p>المواسير الحرارية</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>10 <span> سنوات</span></h3>
+
+                    <p>الأسلاك الكهربائية</p>
+                  </div>
+                </div>
+                <div class="trusted-item">
+                  <div>
+                    <h3>10 <span> سنوات</span></h3>
+
+                    <p>على العيوب الخفية</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="payment-services">
+        <div>
+          <div class="container">
+            <div class="service-flex">
+              <div class="service-content">
+                <div class="heading">
+                  <h1>خدمات مابعد البيع</h1>
+                </div>
+                <div class="service-item">
+                  <span>1</span>
+                  <p>التنسيق بين الملاك</p>
+                </div>
+                <div class="service-item">
+                  <span>2</span>
+                  <p>سداد فاتورة شركة المياة السنة الأولى</p>
+                </div>
+                <div class="service-item">
+                  <span>3</span>
+                  <p>صيانة المرافق العامة السنة الأولى</p>
+                </div>
+                <div class="service-item">
+                  <span>4</span>
+                  <p>سداد فاتورة الكهرباء العامة السنة الأولى</p>
+                </div>
+                <div class="service-item">
+                  <span>5</span>
+                  <p>التأجير بدون رسوم</p>
+                </div>
+                <div class="service-item">
+                  <span>6</span>
+                  <p>خدمات النظافة العامة السنة الأولى</p>
+                </div>
+                <div class="service-item">
+                  <span>7</span>
+                  <p>تنسيق النباتات والتشجير السنة الأولى</p>
+                </div>
+              </div>
+              <div class="service-img-wrapper">
+                <div>
+                  <img src="/imgs/services/gallery11.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="insurance">
+        <h2>التأمين على العيوب الخفية (شركة ملاذ للتأمين)</h2>
+        <p>
+          يغطى تأمين العيوب الخفية أي عيب في الأعمال الإنشائية أو عناصرها
+          الواقية والتي تضعف من قوة وثبات أوإستقرار المبنى والذي قد يرجع إلى
+          أخطاء أو أعطال أو قصور في التصميم أو المواد أو فحص التربة أو الإنشاء،
+          على أن يكون هذا العيب لم يُكتشف في تاريخ إصدار شهادة الإشغال. ويتم
+          تعويض المؤمن له عن تكاليف الإصلاح والإستبدال وتعزيز المباني الناتجة عن
+          العيوب الخفية التي تُكتشف و تُبلغ الشركة عنها- وذلك خلال فترة التغطية
+          التأمينية لمدة عشر سنوات لما قد يسبب الأتي:
+        </p>
+        <ul>
+          <li>أ. الأضرار المادية للمباني.</li>
+          <li>
+            ب. التهديد بوقوع إنهيار وشيك للمباني يتطلب إتخاذ تدابيرعلاجية فورية
+            لمنع الإنهيار الفعلي وذلك خلال فترة التغطية التأمينية.
+          </li>
+        </ul>
+      </section>
+      <section class="landmarks">
+        <h2>اقرب المعالم</h2>
+        <div class="tabs">
+          <button data-lat="24.872181887875936" data-lng="46.65931781404533">
+            النرجس 16
+          </button>
+          <button data-lat="24.922355639269078" data-lng="46.78231079748344">
+            بوابة مطار الملك خالد 08د
+          </button>
+          <button data-lat="24.850038695120304" data-lng="46.80102894751417">
+            واجهة روشن 15 د
+          </button>
+          <button data-lat="24.880078060788218" data-lng="46.71140433097221">
+            أكسبو 2030 10 د
+          </button>
+          <button data-lat="24.869409644898308" data-lng="46.64311992404743">
+            مستشفى الحبيب (النرجس) 03 د
+          </button>
+        </div>
+        <div id="map"></div>
+      </section>
+      <section class="">
+        <div class="container">
+          <div class="appartments">
+            <div class="table-container">
+              <h2 class="table-heading">تفاصيل الشقق</h2>
+              <table class="apartment-table">
+                <thead>
+                  <tr>
+                    <th>رقم الشقة</th>
+                    <th>المساحة</th>
+                    <th>السعر</th>
+                    <th>الدور</th>
+                    <th>المواصفات</th>
+                  </tr>
+                </thead>
+                <tbody id="apartment-tbody">
+                  <!-- Table rows will be inserted here by JavaScript -->
+                </tbody>
+              </table>
+              <div class="pagination">
+                <button id="next-btn">التالي</button>
+                <span id="page-info"></span>
+                <button id="prev-btn">السابق</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="partners-container">
+        <h2 class="partners-heading">شركاء النجاح</h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Slides will be inserted here by JavaScript -->
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <h2>شركة مقام للتطوير العقاري</h2>
+
+        <h2>ارقام المسوقين</h2>
+        <div class="contact-list">
+          <a href="https://wa.me/966555575023" class="contact-item">
+            <p>١- سلمان</p>
+            <span>0555575023</span>
+          </a>
+          <a href="https://wa.me/966562752923" class="contact-item">
+            <p>٢- ابو محسن</p>
+            <span>0562752923</span>
+          </a>
+          <a href="https://wa.me/966534642200" class="contact-item">
+            <p>٣- ماجد</p>
+            <span>0534642200</span>
+          </a>
+        </div>
+        <div class="footer-details">
+          <p>&copy; 2024 شركة مقام للتطوير العقاري. جميع الحقوق محفوظة.</p>
+        </div>
+        <div class="developer-credit">
+          <p>
+            تم التطوير بواسطه
+            <a href="https://abdalla-webportfolio.vercel.app/" target="_blank"
+              >abdallaMon</a
+            >
+          </p>
+        </div>
+      </footer>
     </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
