@@ -264,7 +264,16 @@ body {
 .drawer ul li a:hover {
   color: var(--secondary-color);
 }
+@media (max-width: 1280px) {
+  .navbar .nav-links {
+    display: none;
+  }
 
+  .menu-icon {
+    display: flex;
+  }
+}
+/* Hero Section Styles */
 .hero {
   background: url("../imgs/hero/hero1.png") no-repeat top right/cover;
   height: fit-content;
@@ -335,14 +344,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-  }
-
   .overlay {
     display: none;
     right: -100%;
