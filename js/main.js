@@ -400,14 +400,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   function initMap2() {
     const defaultLocation = [24.872181887875936, 46.65931781404533];
     const map = L.map("map").setView(defaultLocation, 12);
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        attribution: "© OpenStreetMap contributors, © CARTO",
-        subdomains: "abcd",
-        maxZoom: 19,
-      }
-    ).addTo(map);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
     const locations = [
       { position: defaultLocation, title: "النرجس 16", duration: "0 د" },
       {
@@ -493,13 +488,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       });
 
-      document.querySelectorAll(".tabs button").forEach((button) => {
-        button.addEventListener("click", () => {
-          const lat = button.getAttribute("data-lat");
-          const lng = button.getAttribute("data-lng");
+      document.querySelectorAll(".dropdown-content a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const lat = link.getAttribute("data-lat");
+          const lng = link.getAttribute("data-lng");
           const selectedLocation = [parseFloat(lat), parseFloat(lng)];
 
-          // Define bounds to include both the default location and the selected location from the button
+          // Define bounds to include both the default location and the selected location from the dropdown
           const bounds = L.latLngBounds([defaultLocation, selectedLocation]);
           map.fitBounds(bounds, { padding: [50, 50] }); // Adjust view with padding for better visibility
 
@@ -523,7 +519,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           durationLabel = L.marker(midPoint, {
             icon: L.divIcon({
               className: "duration-label",
-              html: `<div style="background: #033551; padding: 5px; color:white; border: 1px solid black;">${button.getAttribute(
+              html: `<div style="background: #152731; padding: 5px; color:white; border: 1px solid black;">${link.getAttribute(
                 "data-duration"
               )}</div>`,
               iconSize: [100, 40],
@@ -534,7 +530,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
   }
-
   initMap2();
 
   // initMap();
