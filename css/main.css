@@ -1006,7 +1006,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid var(--light-gray);
-  background-color: #152731;
+  background-color: #0b293b;
   color: white;
 }
 
@@ -1092,7 +1092,7 @@ body {
 }
 .table-container {
   overflow-x: auto;
-  width: fit-content;
+  width: 100%;
 }
 
 .table-heading {
