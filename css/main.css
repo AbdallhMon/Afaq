@@ -835,6 +835,9 @@ swiper-slide {
   }
   flex-grow: 1;
   gap: 10px;
+  @media (min-width: 992) {
+    gap: 20px;
+  }
 }
 .trusted-item {
   background: #0b293b;
