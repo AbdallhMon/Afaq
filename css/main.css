@@ -1244,12 +1244,8 @@ swiper-slide img {
   background-color: var(--primary-color);
   color: var(--text-color);
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0 12px;
   margin-top: 50px;
-}
-
-.footer-details {
-  margin-bottom: 20px;
 }
 
 .footer-details h2 {
@@ -1262,10 +1258,12 @@ swiper-slide img {
 }
 
 .contact-list {
-  display: flex;
+  display: grid;
+  padding: 0 6px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -1274,10 +1272,15 @@ swiper-slide img {
   flex-direction: column;
   align-items: center;
   background-color: #1b3341;
-  padding: 10px 20px;
+  padding: 10px 12px;
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--shadow-color);
   transition: transform 0.3s ease;
+  justify-content: space-around;
+}
+.contact-item img {
+  width: 30px;
+  height: 30px;
 }
 
 .contact-item:hover {
@@ -1295,7 +1298,7 @@ swiper-slide img {
 }
 
 .developer-credit {
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 0;
 }
 
