@@ -690,9 +690,52 @@ body {
 .project-features h2 {
   font-size: 2.5rem;
   color: var(--secondary-color);
+  @media (max-width: 767px) {
+    font-size: 1.3rem;
+  }
+  margin: 0;
+  text-align: center;
+}
+.project-header {
+  position: relative;
+}
+.project-features .project-header {
   margin-bottom: 20px;
   margin-top: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.project-features .swiper-button {
+  background-color: #5b4a3e4d;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+.project-features .swiper-button-nex {
+  left: 0;
+}
+.project-features .swiper-button-nex img {
+  transform: rotate(180deg);
+  -webkit-transform: rotate();
+  -moz-transform: rotate();
+  -ms-transform: rotate();
+  -o-transform: rotate();
+}
+.project-features .swiper-button img {
+  width: 20px;
+  height: 20px;
+}
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  color: var(--primary-color) !important;
 }
 
 .feature-grid {
@@ -707,6 +750,9 @@ body {
   @media (min-width: 600px) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
+}
+swiper-slide {
+  width: fit-content !important;
 }
 
 .feature-item {

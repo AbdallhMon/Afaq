@@ -703,4 +703,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   displayTable(tableData, tableBody, rowsPerPage, currentPage);
   updatePagination();
+  const swiperEl = document.querySelector("swiper-container");
+
+  const swiperButtons = document.querySelectorAll(".swiper-button");
+  swiperButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.classList.contains("swiper-button-nex")) {
+        swiperEl.swiper.slideNext();
+      } else {
+        swiperEl.swiper.slidePrev();
+      }
+    });
+  });
 });
