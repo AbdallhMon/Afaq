@@ -834,7 +834,7 @@ swiper-slide {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   flex-grow: 1;
-  gap: 20px;
+  gap: 10px;
 }
 .trusted-item {
   background: #0b293b;
