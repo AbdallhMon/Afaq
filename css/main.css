@@ -956,28 +956,35 @@ body {
   margin-bottom: 10px;
 }
 /* locations */
-.landmarks {
-  margin: 50px 15px;
-  border-radius: 12px;
+#landmarks .container {
+  padding: 0;
+}
+#landmarks {
+  /* background-color: var(--background-color); */
+  text-align: center;
   padding: 20px;
-  background-color: #efefef;
+  margin: 50px 10px;
+}
+.landmarks {
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.landmarks h2 {
-  color: #333;
+#landmarks h2 {
+  color: var(--primary-color);
   margin-top: 0;
   font-size: 28px;
-  margin-bottom: 20px;
 }
 
 #map {
-  height: 600px;
+  height: 500px;
   width: 100%;
 }
 
@@ -987,10 +994,11 @@ body {
   box-shadow: 0px 8px 16px 0px var(--shadow-color);
   z-index: 1;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin-bottom: 10px;
 }
 
