@@ -791,6 +791,10 @@ swiper-slide {
 .trusted {
   padding: 80px 0 0;
 }
+.trusted .container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .trusted-container {
   padding: 40px;
