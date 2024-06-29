@@ -835,7 +835,7 @@ swiper-slide {
   }
   flex-grow: 1;
   gap: 10px;
-  @media (min-width: 992) {
+  @media (min-width: 992px) {
     gap: 20px;
   }
 }
@@ -862,6 +862,9 @@ swiper-slide {
   color: var(--teritary-color);
   font-size: 1.2rem;
   margin-top: 5px;
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
 }
 
 .trusted-item {
