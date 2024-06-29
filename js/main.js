@@ -334,34 +334,34 @@ document.addEventListener("DOMContentLoaded", async () => {
       {
         position: [24.872181887875936, 46.65931781404533],
         title: "النرجس 16",
-        icon: "imgs/locations/location1.png",
+        // icon: "imgs/locations/location1.png",
       },
       {
         position: [24.922355639269078, 46.78231079748344],
         title: "بوابة مطار الملك خالد 08د",
-        icon: "imgs/locations/location2.jpg",
+        // icon: "imgs/locations/location2.jpg",
       },
       {
         position: [24.850038695120304, 46.80102894751417],
         title: "واجهة روشن 15 د",
-        icon: "imgs/locations/location3.jpg",
+        // icon: "imgs/locations/location3.jpg",
       },
       {
         position: [24.880078060788218, 46.71140433097221],
         title: "أكسبو 2030 10 د",
-        icon: "imgs/locations/location4.jpg",
+        // icon: "imgs/locations/location4.jpg",
       },
       {
         position: [24.869409644898308, 46.64311992404743],
         title: "مستشفى الحبيب (النرجس) 03 د",
-        icon: "imgs/locations/location5.jpg",
+        // icon: "imgs/locations/location5.jpg",
       },
     ];
 
     locations.forEach((location) => {
       const markerHtml = `
         <div class="custom-marker">
-          <img src="${location.icon}" alt="${location.title}">
+          <!-- <img src="${location.icon}" alt="${location.title}"> -->
           <div class="title">${location.title}</div>
         </div>
       `;
@@ -397,8 +397,147 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
   }
+  function initMap2() {
+    const defaultLocation = [24.872181887875936, 46.65931781404533];
+    const map = L.map("map").setView(defaultLocation, 12);
+    L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+      {
+        attribution: "© OpenStreetMap contributors, © CARTO",
+        subdomains: "abcd",
+        maxZoom: 19,
+      }
+    ).addTo(map);
+    const locations = [
+      { position: defaultLocation, title: "النرجس 16", duration: "0 د" },
+      {
+        position: [24.922355639269078, 46.78231079748344],
+        title: "بوابة مطار الملك خالد",
+        duration: "08 د",
+      },
+      {
+        position: [24.850038695120304, 46.80102894751417],
+        title: "واجهة روشن",
+        duration: "15 د",
+      },
+      {
+        position: [24.880078060788218, 46.71140433097221],
+        title: "أكسبو 2030",
+        duration: "10 د",
+      },
+      {
+        position: [24.869409644898308, 46.64311992404743],
+        title: "مستشفى الحبيب (النرجس)",
+        duration: "03 د",
+      },
+    ];
+    let polyline;
+    let durationLabel; // Reference to the last duration label marker
 
-  initMap();
+    locations.forEach((location, index) => {
+      const markerOptions = {
+        color: location.position === defaultLocation ? "red" : "blue",
+      };
+
+      const customTooltip = `
+        <div style="text-align: center;" class="custom-tooltip">
+          <strong>${location.title}</strong><br>
+        </div>
+      `;
+
+      const marker = L.circleMarker(location.position, markerOptions).addTo(
+        map
+      );
+
+      if (index !== 0) {
+        marker.bindTooltip(customTooltip, {
+          permanent: true,
+          direction: "top",
+        });
+      }
+
+      marker.on("click", () => {
+        if (location.position === defaultLocation) {
+          // Reset the map view to the default location without adding or removing any markers or layers
+          map.setView(defaultLocation, 12);
+        } else {
+          // Existing functionality for non-default locations
+          const bounds = L.latLngBounds([defaultLocation, location.position]);
+          map.fitBounds(bounds, { padding: [50, 50] });
+
+          if (polyline) {
+            map.removeLayer(polyline);
+          }
+          polyline = L.polyline([defaultLocation, location.position], {
+            color: "blue",
+            weight: 4,
+          }).addTo(map);
+
+          if (durationLabel) {
+            map.removeLayer(durationLabel);
+          }
+
+          const midPoint = [
+            (defaultLocation[0] + location.position[0]) / 2,
+            (defaultLocation[1] + location.position[1]) / 2,
+          ];
+
+          durationLabel = L.marker(midPoint, {
+            icon: L.divIcon({
+              className: "duration-label",
+              html: `<div style="background: #033551; padding: 8px;color:white; border: 1px solid black; width:fit-content;border-radius:50%;">${location.duration}</div>`,
+              iconSize: [100, 40],
+              iconAnchor: [50, 20],
+            }),
+          }).addTo(map);
+        }
+      });
+
+      document.querySelectorAll(".tabs button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const lat = button.getAttribute("data-lat");
+          const lng = button.getAttribute("data-lng");
+          const selectedLocation = [parseFloat(lat), parseFloat(lng)];
+
+          // Define bounds to include both the default location and the selected location from the button
+          const bounds = L.latLngBounds([defaultLocation, selectedLocation]);
+          map.fitBounds(bounds, { padding: [50, 50] }); // Adjust view with padding for better visibility
+
+          if (polyline) {
+            map.removeLayer(polyline);
+          }
+          polyline = L.polyline([defaultLocation, selectedLocation], {
+            color: "black",
+            weight: 4,
+          }).addTo(map);
+
+          if (durationLabel) {
+            map.removeLayer(durationLabel);
+          }
+
+          const midPoint = [
+            (defaultLocation[0] + parseFloat(lat)) / 2,
+            (defaultLocation[1] + parseFloat(lng)) / 2,
+          ];
+
+          durationLabel = L.marker(midPoint, {
+            icon: L.divIcon({
+              className: "duration-label",
+              html: `<div style="background: #033551; padding: 5px; color:white; border: 1px solid black;">${button.getAttribute(
+                "data-duration"
+              )}</div>`,
+              iconSize: [100, 40],
+              iconAnchor: [50, 20],
+            }),
+          }).addTo(map);
+        });
+      });
+    });
+  }
+
+  initMap2();
+
+  // initMap();
   const tableData = [
     [
       "01",
@@ -567,26 +706,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // Initial display
   displayTable(tableData, tableBody, rowsPerPage, currentPage);
   updatePagination();
-  // Swiper initialization
-  new Swiper(".swiper-container", {
-    slidesPerView: 5,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 1500,
-      disableOnInteraction: false,
-    },
-  });
-
-  // Dynamically create slides
-  const partnersContainer = document.querySelector(".swiper-wrapper");
-  for (let i = 1; i <= 11; i++) {
-    const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
-    slide.innerHTML = `<img src="./imgs/partners/Asset ${i}.png" alt="Partner ${i}">`;
-    partnersContainer.appendChild(slide);
-  }
 });
